@@ -1,0 +1,7 @@
+<div id="#wall">
+  <ul>
+    <% @issues.each do |issue| %>
+      <%= render 'card', :issue => issue %>
+    <% end %>
+  </ul>
+</div>
