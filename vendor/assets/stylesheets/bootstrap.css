@@ -169,7 +169,7 @@ textarea {
   vertical-align: top;
 }
 
-@media print {
+/*@media print {
   * {
     color: #000 !important;
     text-shadow: none !important;
@@ -219,7 +219,7 @@ textarea {
   h3 {
     page-break-after: avoid;
   }
-}
+}*/
 
 body {
   margin: 0;

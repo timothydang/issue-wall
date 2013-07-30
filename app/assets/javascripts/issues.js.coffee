@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $(".print").click ->
+    parent = $(this).parent()
+
+    # render print stylesheet
+    _printFunction = window.print
+
+    window.print = ->
+      alert "printing"
+      parent.siblings().hide()
+      _printFunction()
+      parent.siblings().show()
+
+    window.print()
