@@ -1,4 +1,16 @@
-<li>
-  <span><%= issue.number %> - </span>
+<li class="issue"
+  <span>#<%= issue.number %> - </span>
   <span><%= issue.title %></span>
+  <p><%= issue.body %></p>
+  <p>Comments: <%= issue.comments %></p>
+  <p>Updated: <%= distance_of_time_in_words_to_now(issue.updated_at) %> ago</p>
+  <p>Created by: <%= issue.user.login %>
+  <% if issue.assignee %>
+    <p>Assigned to: <%= issue.assignee.login %>
+  <% end %>
+  <p class="tags">
+  <% for tag in issue.labels %>
+    <span style="background-color:#<%= tag.color %>"><%= tag.name %></span>
+  <% end %>
+  </p>
 </li>
